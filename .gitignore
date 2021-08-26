@@ -1,0 +1,15 @@
+*bak
+*cache.lib
+*csv
+*zip
+sym-lib-table
+fp-info-cache
+fp-lib-table
+
+plot/
+
+*.net
+
+*.xml
+
+larsskj-008.png

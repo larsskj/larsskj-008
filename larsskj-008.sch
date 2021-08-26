@@ -1,0 +1,456 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "larsskj-008"
+Date "2021-05-10"
+Rev "01"
+Comp "Lars Skjærlund"
+Comment1 ""
+Comment2 ""
+Comment3 "Copyright © 2021 by Lars Skjærlund"
+Comment4 "A controller board with sound and driver for small motors for model railroad systems."
+$EndDescr
+$Comp
+L MCU_Module:Arduino_Nano_v3.x A1
+U 1 1 609937AC
+P 5550 3200
+F 0 "A1" H 5150 2200 50  0000 C CNN
+F 1 "Arduino Nano" H 5150 2100 50  0000 C CNN
+F 2 "Module:Arduino_Nano" H 5550 3200 50  0001 C CIN
+F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 5550 3200 50  0001 C CNN
+	1    5550 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5050 3600 4700 3600
+Wire Wire Line
+	4700 3600 4700 1900
+Wire Wire Line
+	4700 1900 7300 1900
+Wire Wire Line
+	7300 1900 7300 2650
+$Comp
+L Device:R R1
+U 1 1 6099AD55
+P 6000 1800
+F 0 "R1" V 5793 1800 50  0000 C CNN
+F 1 "1K0" V 5884 1800 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5930 1800 50  0001 C CNN
+F 3 "~" H 6000 1800 50  0001 C CNN
+F 4 "C21190" V 6000 1800 50  0001 C CNN "LCSC"
+	1    6000 1800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5050 3700 4600 3700
+Wire Wire Line
+	4600 3700 4600 1800
+Wire Wire Line
+	4600 1800 5850 1800
+Wire Wire Line
+	6150 1800 7400 1800
+Wire Wire Line
+	7400 1800 7400 2550
+$Comp
+L power:GND #PWR0101
+U 1 1 609BB8AB
+P 7450 5600
+F 0 "#PWR0101" H 7450 5350 50  0001 C CNN
+F 1 "GND" H 7455 5427 50  0000 C CNN
+F 2 "" H 7450 5600 50  0001 C CNN
+F 3 "" H 7450 5600 50  0001 C CNN
+	1    7450 5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7300 2650 7650 2650
+Wire Wire Line
+	7400 2550 7650 2550
+$Comp
+L Arduino:DFPLAYER_MINI U1
+U 1 1 60992E7F
+P 8250 2800
+F 0 "U1" H 8250 3487 60  0000 C CNN
+F 1 "DFPlayer Mini" H 8250 3381 60  0000 C CNN
+F 2 "Arduino_Nano:DFPlayer_V2" H 8250 2800 60  0001 C CNN
+F 3 "" H 8250 2800 60  0000 C CNN
+	1    8250 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8850 3050 8950 3050
+Wire Wire Line
+	8950 3050 8950 3300
+$Comp
+L power:VDC #PWR0102
+U 1 1 609BD83B
+P 7650 1500
+F 0 "#PWR0102" H 7650 1400 50  0001 C CNN
+F 1 "VDC" H 7665 1673 50  0000 C CNN
+F 2 "" H 7650 1500 50  0001 C CNN
+F 3 "" H 7650 1500 50  0001 C CNN
+	1    7650 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDC #PWR0103
+U 1 1 609BDE8B
+P 5750 1500
+F 0 "#PWR0103" H 5750 1400 50  0001 C CNN
+F 1 "VDC" H 5765 1673 50  0000 C CNN
+F 2 "" H 5750 1500 50  0001 C CNN
+F 3 "" H 5750 1500 50  0001 C CNN
+	1    5750 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 2450 7650 1500
+Wire Wire Line
+	5750 2200 5750 1500
+$Comp
+L power:VCC #PWR0104
+U 1 1 609BEAF8
+P 5450 1500
+F 0 "#PWR0104" H 5450 1350 50  0001 C CNN
+F 1 "VCC" H 5465 1673 50  0000 C CNN
+F 2 "" H 5450 1500 50  0001 C CNN
+F 3 "" H 5450 1500 50  0001 C CNN
+	1    5450 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 2200 5450 1500
+$Comp
+L power:GND #PWR0105
+U 1 1 609BF2DC
+P 5650 4800
+F 0 "#PWR0105" H 5650 4550 50  0001 C CNN
+F 1 "GND" H 5655 4627 50  0000 C CNN
+F 2 "" H 5650 4800 50  0001 C CNN
+F 3 "" H 5650 4800 50  0001 C CNN
+	1    5650 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 4200 5650 4400
+Wire Wire Line
+	5550 4200 5550 4400
+Wire Wire Line
+	5550 4400 5650 4400
+Connection ~ 5650 4400
+Wire Wire Line
+	5650 4400 5650 4800
+$Comp
+L Connector:Conn_01x03_Male J1
+U 1 1 609C181D
+P 1700 2550
+F 0 "J1" H 1750 2300 50  0000 C CNN
+F 1 "Conn_01x03_Male" H 1200 2250 50  0001 C CNN
+F 2 "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_3-G-5,08_1x03_P5.08mm_Horizontal" H 1700 2550 50  0001 C CNN
+F 3 "~" H 1700 2550 50  0001 C CNN
+	1    1700 2550
+	1    0    0    1   
+$EndComp
+$Comp
+L power:VCC #PWR0106
+U 1 1 609C4CF8
+P 2000 2150
+F 0 "#PWR0106" H 2000 2000 50  0001 C CNN
+F 1 "VCC" H 2015 2323 50  0000 C CNN
+F 2 "" H 2000 2150 50  0001 C CNN
+F 3 "" H 2000 2150 50  0001 C CNN
+	1    2000 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDC #PWR0107
+U 1 1 609C5218
+P 2200 2150
+F 0 "#PWR0107" H 2200 2050 50  0001 C CNN
+F 1 "VDC" H 2215 2323 50  0000 C CNN
+F 2 "" H 2200 2150 50  0001 C CNN
+F 3 "" H 2200 2150 50  0001 C CNN
+	1    2200 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0108
+U 1 1 609C586F
+P 2200 2850
+F 0 "#PWR0108" H 2200 2600 50  0001 C CNN
+F 1 "GND" H 2205 2677 50  0000 C CNN
+F 2 "" H 2200 2850 50  0001 C CNN
+F 3 "" H 2200 2850 50  0001 C CNN
+	1    2200 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 2450 2000 2450
+Wire Wire Line
+	2000 2450 2000 2150
+Wire Wire Line
+	1900 2550 2200 2550
+Wire Wire Line
+	2200 2550 2200 2150
+Wire Wire Line
+	1900 2650 2200 2650
+Wire Wire Line
+	2200 2650 2200 2850
+$Comp
+L Transistor_FET:IRF540N Q1
+U 1 1 609D258A
+P 6850 4150
+F 0 "Q1" H 7054 4196 50  0000 L CNN
+F 1 "IRF520" H 7054 4105 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:TO-263-2" H 7100 4075 50  0001 L CIN
+F 3 "http://www.irf.com/product-info/datasheets/data/irf540n.pdf" H 6850 4150 50  0001 L CNN
+F 4 "C23982" H 6850 4150 50  0001 C CNN "LCSC"
+	1    6850 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 5200 7450 5200
+Wire Wire Line
+	6950 4350 7450 4350
+Wire Wire Line
+	5050 3300 4950 3300
+Wire Wire Line
+	4950 2100 6600 2100
+Wire Wire Line
+	6600 2100 6600 4150
+Wire Wire Line
+	6600 4150 6650 4150
+Wire Wire Line
+	4950 2100 4950 3300
+Wire Wire Line
+	5050 3400 4850 3400
+Wire Wire Line
+	4850 3400 4850 2000
+Wire Wire Line
+	4850 2000 6500 2000
+$Comp
+L Device:R R2
+U 1 1 609E1674
+P 6600 4350
+F 0 "R2" H 6670 4396 50  0000 L CNN
+F 1 "1K0" H 6670 4305 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6530 4350 50  0001 C CNN
+F 3 "~" H 6600 4350 50  0001 C CNN
+F 4 "C21190" H 6600 4350 50  0001 C CNN "LCSC"
+	1    6600 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 4200 6600 4150
+Connection ~ 6600 4150
+$Comp
+L Transistor_FET:IRF540N Q2
+U 1 1 609D4811
+P 6850 5000
+F 0 "Q2" H 7054 5046 50  0000 L CNN
+F 1 "IRF520" H 7054 4955 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:TO-263-2" H 7100 4925 50  0001 L CIN
+F 3 "http://www.irf.com/product-info/datasheets/data/irf540n.pdf" H 6850 5000 50  0001 L CNN
+F 4 "C23982" H 6850 5000 50  0001 C CNN "LCSC"
+	1    6850 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 2000 6500 5000
+Wire Wire Line
+	6500 5000 6600 5000
+Wire Wire Line
+	6600 4500 6600 4600
+Wire Wire Line
+	6600 4600 7450 4600
+$Comp
+L Device:R R3
+U 1 1 609F136D
+P 6600 5200
+F 0 "R3" H 6670 5246 50  0000 L CNN
+F 1 "1K0" H 6670 5155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6530 5200 50  0001 C CNN
+F 3 "~" H 6600 5200 50  0001 C CNN
+F 4 "C21190" H 6600 5200 50  0001 C CNN "LCSC"
+	1    6600 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 5000 6600 5050
+Connection ~ 6600 5000
+Wire Wire Line
+	6600 5000 6650 5000
+Wire Wire Line
+	6600 5350 6600 5500
+Wire Wire Line
+	6600 5500 7450 5500
+$Comp
+L power:VCC #PWR0109
+U 1 1 609FCAA2
+P 6950 3150
+F 0 "#PWR0109" H 6950 3000 50  0001 C CNN
+F 1 "VCC" H 6965 3323 50  0000 C CNN
+F 2 "" H 6950 3150 50  0001 C CNN
+F 3 "" H 6950 3150 50  0001 C CNN
+	1    6950 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 3150 6950 3850
+Wire Wire Line
+	6950 3850 8450 3850
+$Comp
+L Connector_Generic:Conn_01x10 J2
+U 1 1 60BA0303
+P 8850 4300
+F 0 "J2" H 8930 4292 50  0000 L CNN
+F 1 "Conn_01x10" H 8930 4201 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-10-2.54_1x10_P2.54mm_Horizontal" H 8850 4300 50  0001 C CNN
+F 3 "~" H 8850 4300 50  0001 C CNN
+	1    8850 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 3950 8350 3950
+Wire Wire Line
+	7450 5600 7450 5500
+Connection ~ 7450 4350
+Wire Wire Line
+	7450 4350 7450 3300
+Connection ~ 7450 4600
+Wire Wire Line
+	7450 4600 7450 4350
+Connection ~ 7450 5200
+Wire Wire Line
+	7450 5200 7450 4600
+Connection ~ 7450 5500
+Wire Wire Line
+	7450 5500 7450 5200
+Wire Wire Line
+	7450 3300 8550 3300
+Wire Wire Line
+	7650 3150 7650 4300
+Wire Wire Line
+	7650 4300 8650 4300
+Wire Wire Line
+	7650 2950 7550 2950
+Wire Wire Line
+	7550 2950 7550 4400
+Wire Wire Line
+	7550 4400 8650 4400
+Wire Wire Line
+	7450 3300 7450 3050
+Wire Wire Line
+	7450 3050 7650 3050
+Connection ~ 7450 3300
+Wire Wire Line
+	8650 4100 8550 4100
+Wire Wire Line
+	8550 4100 8550 3900
+Connection ~ 8550 3300
+Wire Wire Line
+	8550 3300 8950 3300
+Wire Wire Line
+	8650 3900 8550 3900
+Connection ~ 8550 3900
+Wire Wire Line
+	8550 3900 8550 3300
+$Comp
+L Device:R R5
+U 1 1 60BD3DEE
+P 4000 2650
+F 0 "R5" H 3800 2700 50  0000 L CNN
+F 1 "10K" H 3750 2600 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 3930 2650 50  0001 C CNN
+F 3 "~" H 4000 2650 50  0001 C CNN
+F 4 "C25804" H 4000 2650 50  0001 C CNN "LCSC"
+	1    4000 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 60BD47B8
+P 4200 2650
+F 0 "R4" H 4270 2696 50  0000 L CNN
+F 1 "10K" H 4270 2605 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4130 2650 50  0001 C CNN
+F 3 "~" H 4200 2650 50  0001 C CNN
+F 4 "C25804" H 4200 2650 50  0001 C CNN "LCSC"
+	1    4200 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDC #PWR0110
+U 1 1 60BD51BA
+P 4000 2100
+F 0 "#PWR0110" H 4000 2000 50  0001 C CNN
+F 1 "VDC" H 4015 2273 50  0000 C CNN
+F 2 "" H 4000 2100 50  0001 C CNN
+F 3 "" H 4000 2100 50  0001 C CNN
+	1    4000 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDC #PWR0111
+U 1 1 60BD5657
+P 4200 2100
+F 0 "#PWR0111" H 4200 2000 50  0001 C CNN
+F 1 "VDC" H 4215 2273 50  0000 C CNN
+F 2 "" H 4200 2100 50  0001 C CNN
+F 3 "" H 4200 2100 50  0001 C CNN
+	1    4200 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 2100 4200 2500
+Wire Wire Line
+	4000 2100 4000 2500
+Wire Wire Line
+	5050 2900 4200 2900
+Wire Wire Line
+	4200 2900 4200 2800
+Wire Wire Line
+	5050 3000 4000 3000
+Wire Wire Line
+	4000 3000 4000 2800
+Wire Wire Line
+	4200 2900 4200 6000
+Wire Wire Line
+	4200 6000 8000 6000
+Wire Wire Line
+	8000 6000 8000 4000
+Wire Wire Line
+	8000 4000 8650 4000
+Connection ~ 4200 2900
+Wire Wire Line
+	4000 3000 4000 6100
+Wire Wire Line
+	4000 6100 8100 6100
+Wire Wire Line
+	8100 6100 8100 4200
+Wire Wire Line
+	8100 4200 8650 4200
+Connection ~ 4000 3000
+Wire Wire Line
+	6950 4800 8200 4800
+Wire Wire Line
+	8200 4800 8200 4700
+Wire Wire Line
+	8200 4700 8650 4700
+Wire Wire Line
+	8350 3950 8350 4500
+Wire Wire Line
+	8350 4500 8650 4500
+Wire Wire Line
+	8450 3850 8450 4600
+Wire Wire Line
+	8450 4800 8650 4800
+Wire Wire Line
+	8650 4600 8450 4600
+Connection ~ 8450 4600
+Wire Wire Line
+	8450 4600 8450 4800
+$EndSCHEMATC
